@@ -1,4 +1,4 @@
-{ lawful }:
+{ lawful, ... }:
 with lawful;
 
 # Changes that bring larger gains to most
