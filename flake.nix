@@ -6,17 +6,15 @@
   };
 
   outputs =
-    inputs:
-    with inputs;
+    { nixpkgs }:
     let
-
       system = "x86_64-linux";
 
       pkgs = import nixpkgs { inherit system; };
       lib = pkgs.lib;
     in
     {
-      nixosModules = {
+      nixosModules = rec {
 
         lawful = import ./1-lawful.nix {
           inherit pkgs lib;
