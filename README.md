@@ -1,6 +1,6 @@
 # NixOS Minimal
 
-Description
+Ensmallen your NixOS system!
 
 ### Usage
 
@@ -10,13 +10,17 @@ You know the drill
 inputs.nixos-minimal.follows = "github:me/this";
 
 lib.nixosSystem {
-	...
+	# ...
 	modules = [
-		nixos-minimal.nixosModules.{lawful,neutral,chaotic}
+		nixos-minimal.nixosModules.default
+
+		{
+			nixos.ensmallen.noAccessibility = true;
+			# ...
+			nixos.ensmallen.everything = true;
+		}
 	];
 }
 ```
 
-Each tier includes the ones below.
-
-Reading source code required.
+Reading source code strongly recommended.
